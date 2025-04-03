@@ -34,6 +34,10 @@ def main():
             if item.colliding(player):
                 print("Game Over!")
                 sys.exit()
+            for shot in shots:
+                if item.colliding(shot):
+                    shot.kill()
+                    item.split()
         for item in drawable:
             item.draw(screen)
         pygame.display.flip()
